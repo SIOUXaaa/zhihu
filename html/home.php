@@ -114,8 +114,8 @@
                         //     exit();
                         // }
                         //debugger,pl表中查不到 $name
-                        if($rs1){
-                            while ($row = mysqli_fetch_assoc($rs1)) {
+
+                            while ($rs1&&$row = mysqli_fetch_assoc($rs1)) {
                                 $rows[] = $row;
                             }                                          
                         foreach ($rows as $res) {
@@ -125,8 +125,7 @@
                                 <i><?php echo $res['atime'] ?></i>
                                 <em class="layui-hide-xs"><?php echo $res['num'] ?></em>
                             </li>
-                        <?php }
-                        } ?>
+                        <?php }?>
                     </ul>
                 </div>
             </div>
@@ -140,9 +139,8 @@
                         $sql2 = "select  *  from title where fname=" . $name;
                         $rs2 = mysqli_query($conn, $sql2);
                         $rows = array();
-                        if($rs2){
                        
-                        while ($row = mysqli_fetch_assoc($rs2)) {
+                        while ($rs2&&$row = mysqli_fetch_assoc($rs2)) {
                             $rows[] = $row;
                         }
                         foreach ($rows as $res) {
@@ -156,8 +154,7 @@
                                     <?php echo $res['title'] ?>
                                 </div>
                             </li>
-                        <?php } 
-                        }?>
+                        <?php }?>
                     </ul>
                 </div>
             </div>
