@@ -92,7 +92,7 @@ if (!$conn) {
       </ul>
 
       <div class="fly-column-right layui-hide-xs">
-        <a href="add.php" class="layui-btn">发表新帖</a>
+        <a href="add.php" class="layui-btn layui-btn-radius">发表新帖</a>
       </div>
     </div>
   </div>
