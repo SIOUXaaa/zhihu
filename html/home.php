@@ -108,10 +108,16 @@
                         <?php
                         $sql1 = "select  *  from pl where uname=" . $name;
                         $rs1 = mysqli_query($conn, $sql1);
-                        $rows = array();
-                        while ($row = mysqli_fetch_assoc($rs1)) {
-                            $rows[] = $row;
-                        }
+                        $rows = array();                       
+                        // if(!$rs1){
+                        //     printf("Error:%s\n",mysqli_error($conn));
+                        //     exit();
+                        // }
+                        //debug,pl表中查不到 $name
+                        if($re1){
+                            while ($row = mysqli_fetch_assoc($rs1)) {
+                                $rows[] = $row;
+                            }                                          
                         foreach ($rows as $res) {
                         ?>
                             <li>
@@ -119,7 +125,8 @@
                                 <i><?php echo $res['atime'] ?></i>
                                 <em class="layui-hide-xs"><?php echo $res['num'] ?></em>
                             </li>
-                        <?php } ?>
+                        <?php }
+                        } ?>
                     </ul>
                 </div>
             </div>
@@ -133,6 +140,8 @@
                         $sql2 = "select  *  from title where fname=" . $name;
                         $rs2 = mysqli_query($conn, $sql2);
                         $rows = array();
+                        if($rs2){
+                       
                         while ($row = mysqli_fetch_assoc($rs2)) {
                             $rows[] = $row;
                         }
@@ -147,7 +156,8 @@
                                     <?php echo $res['title'] ?>
                                 </div>
                             </li>
-                        <?php } ?>
+                        <?php } 
+                        }?>
                     </ul>
                 </div>
             </div>
