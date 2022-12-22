@@ -113,7 +113,7 @@
                         //     printf("Error:%s\n",mysqli_error($conn));
                         //     exit();
                         // }
-                        //debug,pl表中查不到 $name
+                        //debugger,pl表中查不到 $name
                         if($re1){
                             while ($row = mysqli_fetch_assoc($rs1)) {
                                 $rows[] = $row;
