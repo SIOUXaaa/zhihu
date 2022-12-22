@@ -42,7 +42,7 @@
 
             <ul class="layui-nav fly-nav-user">
                 <li class="layui-nav-item">
-                    <a class="iconfont icon-touxiang layui-hide-xs" href="index.php"></a>
+                    <a class="iconfont icon-touxiang layui-hide-xs" href="home.php"></a>
                 </li>
                 <?php
                 if (empty($_SESSION["name"])) {
@@ -61,7 +61,7 @@
                             <cite class="layui-hide-xs">
                                 <?php echo $_SESSION['name'] ?>
                             </cite>
-                            <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：Lay 作者"></i>
+                            <!-- <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：Lay 作者"></i> -->
                         </a>
                         <dl class="layui-nav-child">
 
@@ -218,7 +218,7 @@
                 <div class="fly-panel fly-signin">
 
                 </div>
-//回帖榜，但是我没看到
+//回帖榜，但是我没看到，好像是没实现的
                 <div class="fly-panel fly-rank fly-rank-reply" id="LAY_replyRank">
 
                 </div> -->
@@ -292,8 +292,9 @@
             fly: 'index'
         }).use('fly');
     </script>
-<!-- 不知道有啥用，注释掉没反应 
-    <script type="text/javascript">
+
+    <!-- cnzz 流量统计网站，不知道有啥用，没啥影响
+        <script type="text/javascript">
         var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cspan id='cnzz_stat_icon_30088308'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30088308' type='text/javascript'%3E%3C/script%3E"));
     </script> -->
