@@ -83,7 +83,7 @@
             <i class="iconfont icon-nan"></i>
         </h1>
 
-        <p style="padding: 10px 0; color: #5FB878;">认证信息：FLY 作者</p>
+        <!-- <p style="padding: 10px 0; color: #5FB878;">认证信息：FLY 作者</p> -->
 
         <p class="fly-home-info">
             <i class="iconfont icon-kiss" title="飞吻"></i><span style="color: #FF7200;">不抛弃、不放弃。</span>
@@ -91,11 +91,11 @@
             <i class="iconfont icon-chengshi"></i><span>来自中国</span>
         </p>
 
-        <p class="fly-home-sign">（理想是一面旗帜，信念是一枚火炬。）</p>
-
-        <!--  <div class="fly-sns" data-user="">-->
-        <!--    <a href="javascript:;" class="layui-btn layui-btn-primary fly-imActive" data-type="addFriend">关注</a>-->
-        <!--  </div>-->
+        <p class="fly-home-sign">理想是一面旗帜，信念是一枚火炬。</p>
+        
+         <!-- <div class="fly-sns" data-user="">关注。未实现
+           <a href="javascript:;" class="layui-btn layui-btn-primary fly-imActive" data-type="addFriend">关注</a>
+         </div> -->
 
     </div>
 
