@@ -114,7 +114,7 @@
                         //     exit();
                         // }
                         //debugger,pl表中查不到 $name
-                        if($re1){
+                        if($rs1){
                             while ($row = mysqli_fetch_assoc($rs1)) {
                                 $rows[] = $row;
                             }                                          
