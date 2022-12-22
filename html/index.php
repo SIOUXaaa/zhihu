@@ -9,6 +9,7 @@
     <meta name="description" content="Fly社区">
     <link rel="stylesheet" href="../res/layui/css/layui.css">
     <link rel="stylesheet" href="../res/css/global.css">
+    <script src="../res/layui/layui.js"></script>
 </head>
 
 <body>
@@ -64,7 +65,6 @@
                             <!-- <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：Lay 作者"></i> -->
                         </a>
                         <dl class="layui-nav-child">
-
                             <dd><a href="message.php"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息</a></dd>
                             <dd><a href="home.php"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>
                             </dd>
@@ -275,7 +275,7 @@
                 出品</a></p>
     </div>
 
-    <script src="../res/layui/layui.js"></script>
+    
     <script>
         layui.cache.page = '';
         layui.cache.user = {
