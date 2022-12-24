@@ -68,7 +68,7 @@
                             <hr style="margin: 5px 0;">
                             <dd><a href="logout.php" style="text-align: center;">退出</a></dd>
                         </dl>
-                    </li> 
+                    </li>
                 <?php } ?>
 
             </ul>
@@ -92,8 +92,8 @@
         </p>
 
         <p class="fly-home-sign">理想是一面旗帜，信念是一枚火炬。</p>
-        
-         <!-- <div class="fly-sns" data-user="">关注。未实现
+
+        <!-- <div class="fly-sns" data-user="">关注。未实现
            <a href="javascript:;" class="layui-btn layui-btn-primary fly-imActive" data-type="addFriend">关注</a>
          </div> -->
 
@@ -108,16 +108,10 @@
                         <?php
                         $sql1 = "select  *  from pl where uname=" . $name;
                         $rs1 = mysqli_query($conn, $sql1);
-                        $rows = array();                       
-                        // if(!$rs1){
-                        //     printf("Error:%s\n",mysqli_error($conn));
-                        //     exit();
-                        // }
-                        //debugger,pl表中查不到 $name
-
-                            while ($rs1&&$row = mysqli_fetch_assoc($rs1)) {
-                                $rows[] = $row;
-                            }                                          
+                        $rows = array();
+                        while ($rs1 && $row = mysqli_fetch_assoc($rs1)) {
+                            $rows[] = $row;
+                        }
                         foreach ($rows as $res) {
                         ?>
                             <li>
@@ -125,7 +119,7 @@
                                 <i><?php echo $res['atime'] ?></i>
                                 <em class="layui-hide-xs"><?php echo $res['num'] ?></em>
                             </li>
-                        <?php }?>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
@@ -139,8 +133,8 @@
                         $sql2 = "select  *  from title where fname=" . $name;
                         $rs2 = mysqli_query($conn, $sql2);
                         $rows = array();
-                       
-                        while ($rs2&&$row = mysqli_fetch_assoc($rs2)) {
+
+                        while ($rs2 && $row = mysqli_fetch_assoc($rs2)) {
                             $rows[] = $row;
                         }
                         foreach ($rows as $res) {
@@ -154,7 +148,7 @@
                                     <?php echo $res['title'] ?>
                                 </div>
                             </li>
-                        <?php }?>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
@@ -165,7 +159,7 @@
     <div class="fly-footer">
         <p><a href="#" target="_blank">Fly社区</a> 2022 &copy; <a href="#" target="_blank">小超人 出品</a></p>
     </div>
-    
+
     <script>
         layui.cache.page = 'user';
         layui.cache.user = {

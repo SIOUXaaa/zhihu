@@ -27,7 +27,7 @@
         die("Connection failed: " . mysqli_connect_error());
     }
     ?>
-    <div class="fly-header layui-bg-black">
+    <div class="fly-header layui-bg-black ">
         <div class="layui-container">
             <a class="fly-logo" href="index.php">
                 <img src="../res/images/logo.png" alt="layui">
@@ -92,7 +92,7 @@
             </ul>
 
             <div class="fly-column-right layui-hide-xs">
-                <a href="add.php" class="layui-btn layui-btn-radius">发表新帖</a>
+                <a href="add.php" class="layui-btn layui-btn-radius layui-btn-normal">发表新帖</a>
             </div>
         </div>
     </div>
@@ -155,7 +155,7 @@
                         $sql1 = "select  *  from pl";
                         $rs1 = mysqli_query($conn, $sql1);
                         $rows = array();
-                        while ($row = mysqli_fetch_assoc($rs1)) {
+                        while ($rs1 && $row = mysqli_fetch_assoc($rs1)) {
                             $rows[] = $row;
                         }
                         foreach ($rows as $res) {
@@ -209,7 +209,7 @@
                 </div>
             </div>
             <div class="layui-col-md4">
-<!-- //感觉没啥用
+
                 <div class="fly-panel">
 
                 </div>
@@ -218,10 +218,10 @@
                 <div class="fly-panel fly-signin">
 
                 </div>
-//回帖榜，但是我没看到，好像是没实现的
+
                 <div class="fly-panel fly-rank fly-rank-reply" id="LAY_replyRank">
 
-                </div> -->
+                </div>
 
                 <dl class="fly-panel fly-list-one">
                     <dt class="fly-panel-title">本周热议</dt>
@@ -275,7 +275,7 @@
                 出品</a></p>
     </div>
 
-    
+
     <script>
         layui.cache.page = '';
         layui.cache.user = {
@@ -287,17 +287,16 @@
         };
         layui.config({
             version: "3.0.0",
-            base: '../res/mods/' 
+            base: '../res/mods/'
         }).extend({
             fly: 'index'
         }).use('fly');
     </script>
 
-    <!-- cnzz 流量统计网站，不知道有啥用，没啥影响
         <script type="text/javascript">
         var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cspan id='cnzz_stat_icon_30088308'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30088308' type='text/javascript'%3E%3C/script%3E"));
-    </script> -->
+    </script>
 
 </body>
 
