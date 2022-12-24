@@ -65,7 +65,7 @@
                             <!-- <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：Lay 作者"></i> -->
                         </a>
                         <dl class="layui-nav-child">
-                            <dd><a href="message.php"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息</a></dd>
+                            <dd><a href="my.php"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息</a></dd>
                             <dd><a href="home.php"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>
                             </dd>
                             <hr style="margin: 5px 0;">
@@ -271,7 +271,7 @@
     </div>
 
     <div class="fly-footer">
-        <p><a href="#" target="_blank">Fly社区</a> 2022 &copy; <a href="http://www.erdangjiade.com/" target="_blank">小超人
+        <p><a href="#" target="_blank">Fly社区</a> 2022 &copy; <a href="#" target="_blank">小超人
                 出品</a></p>
     </div>
 
