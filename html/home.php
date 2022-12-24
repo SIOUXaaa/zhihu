@@ -110,7 +110,7 @@
                    
                         $rs1 = mysqli_query($conn, $sql1);
                         $rows = array();
-                        while ($rs1 && $row = mysqli_fetch_assoc($rs)) {
+                        while ($rs1 && $row = mysqli_fetch_assoc($rs1)) {
                             $rows[] = $row;
                         }
                         foreach ($rows as $res) {
