@@ -85,7 +85,7 @@
 
     <div class="layui-container fly-marginTop fly-user-main">
         <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user">
-            <li class="layui-nav-item">
+        <li class="layui-nav-item">
                 <a href="home.php">
                     <i class="layui-icon">&#xe609;</i>
                     我的主页
@@ -99,13 +99,13 @@
             </li>
             <li class="layui-nav-item">
                 <a href="mys.php">
-                    <i class="layui-icon">&#xe611;</i>
-                    我收藏的帖
+                    <i class="layui-icon">&#58921;</i>
+                    我的收藏
                 </a>
             </li>
             <li class="layui-nav-item">
                 <a href="gz.php">
-                    <i class="layui-icon">&#xe611;</i>
+                    <i class="layui-icon">&#58889;</i>
                     我的关注
                 </a>
             </li>
