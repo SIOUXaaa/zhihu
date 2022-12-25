@@ -9,7 +9,7 @@
     <meta name="description" content="Fly">
     <link rel="stylesheet" href="../res/layui/css/layui.css">
     <link rel="stylesheet" href="../res/css/global.css">
-    <script src="../res/layui/layui.js"></script>
+    
 </head>
 
 <body style="margin-top: 65px;">
@@ -165,7 +165,7 @@
     <div class="fly-footer">
         <p><a href="#" target="_blank">子小口巴</a> 2022 &copy; <a href="#" target="_blank">延疑丁真 出品</a></p>
     </div>
-
+    <script src="../res/layui/layui.js"></script>
     <script>
         layui.cache.page = 'user';
         layui.cache.user = {
@@ -180,7 +180,16 @@
             base: '../res/mods/'
         }).extend({
             fly: 'index'
-        }).use('fly');
+        }).use(['fly', 'face'], function() {
+            //解析文本，例如表情
+            var $ = layui.$,
+            fly = layui.fly;
+            $('.home-dacontent').each(function() {
+                var othis = $(this),
+                    html = othis.html();
+                othis.html(fly.content(html));
+            });
+        });
     </script>
 
 </body>
