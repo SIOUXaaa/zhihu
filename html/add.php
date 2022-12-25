@@ -105,8 +105,8 @@
                                 </div>
 
 
-                                <div class="layui-form-item">
-                                    <button class="layui-btn" lay-filter="*" lay-submit>立即发布</button>
+                                <div class="layui-form-item" style="text-align:center;">
+                                    <button class="layui-btn layui-btn-radius" lay-filter="*" lay-submit>立即发布</button>
                                 </div>
                             </form>
                         </div>
