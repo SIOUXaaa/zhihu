@@ -6,7 +6,7 @@
     <title>注册</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="fly,社区">
-    <meta name="description" content="孙吧">
+    <meta name="description" content="子小口巴">
     <link rel="stylesheet" href="../res/layui/css/layui.css">
     <link rel="stylesheet" href="../res/css/global.css">
 </head>
@@ -16,7 +16,7 @@
     <div class="fly-header layui-bg-black">
         <div class="layui-container">
             <a class="fly-logo" href="index.php">
-                <img src="../res/images/igotyou.png" alt="layui"  style="height: 50px;">
+                <img src="../res/images/igotyou.png" alt="layui" style="height: 50px;">
             </a>
             <ul class="layui-nav fly-nav layui-hide-xs">
                 <li class="layui-nav-item layui-this">
@@ -54,29 +54,37 @@
                     <div class="layui-tab-item layui-show">
                         <div class="layui-form layui-form-pane">
                             <form method="post" action="reg_ok.php" style="width: max-content; margin: 0 auto;">
-                                <div class="layui-form-item" >
-                                    <label for="L_username" class="layui-form-label" style="border-top-left-radius: 25px;border-bottom-left-radius: 25px;">用户名</label>
+                                <div class="layui-form-item">
+                                    <label for="L_username" class="layui-form-label"
+                                        style="border-top-left-radius: 25px;border-bottom-left-radius: 25px;">用户名</label>
                                     <div class="layui-input-inline">
-                                        <input type="text" id="L_username" name="name" required lay-verify="required"
-                                            autocomplete="off" class="layui-input" style="border-top-right-radius: 25px;border-bottom-right-radius: 25px;">
+                                        <input type="text" id="L_username" name="name" required
+                                            lay-verify="required|username" autocomplete="off" class="layui-input"
+                                            style="border-top-right-radius: 25px;border-bottom-right-radius: 25px;" placeholder="请输入用户名">
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
-                                    <label for="L_pass" class="layui-form-label"  style="border-top-left-radius: 25px;border-bottom-left-radius: 25px;">密码</label>
+                                    <label for="L_pass" class="layui-form-label"
+                                        style="border-top-left-radius: 25px;border-bottom-left-radius: 25px;">密码</label>
                                     <div class="layui-input-inline">
-                                        <input type="password" id="L_pass" name="pass" required lay-verify="required"
-                                            autocomplete="off" class="layui-input" style="border-top-right-radius: 25px;border-bottom-right-radius: 25px;">
+                                        <input type="password" id="L_pass" name="password" required
+                                            lay-verify="required|password" autocomplete="off" class="layui-input"
+                                            style="border-top-right-radius: 25px;border-bottom-right-radius: 25px;" placeholder="请输入密码">
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
-                                    <label for="L_repass" class="layui-form-label" style="border-top-left-radius: 25px;border-bottom-left-radius: 25px;">确认密码</label>
+                                    <label for="L_repass" class="layui-form-label"
+                                        style="border-top-left-radius: 25px;border-bottom-left-radius: 25px;" >确认密码</label>
                                     <div class="layui-input-inline">
-                                        <input type="password" id="L_repass" name="apass" required lay-verify="required"
-                                            autocomplete="off" class="layui-input" style="border-top-right-radius: 25px;border-bottom-right-radius: 25px;">
+                                        <input type="password" id="L_repass" name="apass" required
+                                            lay-verify="required|password|confirm_password" autocomplete="off"
+                                            class="layui-input"
+                                            style="border-top-right-radius: 25px;border-bottom-right-radius: 25px;"  placeholder="请再次输入密码">
                                     </div>
                                 </div>
                                 <div class="layui-form-item" style="text-align:center;">
-                                    <button class="layui-btn layui-btn-radius" lay-filter="*" lay-submit>立即注册</button>
+                                    <!-- <button class="layui-btn layui-btn-radius" lay-filter="*" lay-submit>立即注册</button> -->
+                                    <input class="layui-btn layui-btn-radius" lay-filter="*" value="立即注册" type="submit">
                                 </div>
                             </form>
                         </div>
@@ -89,7 +97,7 @@
 
 
     <div class="fly-footer">
-        <p><a href="#" target="_blank">孙吧</a> 2022 &copy; <a href="#" target="_blank">延疑丁真 出品</a></p>
+        <p><a href="#" target="_blank">子小口巴</a> 2022 &copy; <a href="#" target="_blank">延疑丁真 出品</a></p>
     </div>
 
     <script src="../res/layui/layui.js"></script>
@@ -108,6 +116,34 @@
         }).extend({
             fly: 'index'
         }).use('fly');
+        layui.use(['layer', 'form'], function () {
+            var layer = layui.layer, form = layui.form;
+            var $ = layui.$;
+            form.verify({
+                username: function (value, item) {
+                    if (!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
+                        return '用户名不能有特殊字符！';
+                    }
+                }
+                , password: function (value, item) {
+                    var re = /^[a-zA-Z0-9]{8,20}$/;
+                    if (!value.match(re)) {
+                        return '密码必须8到20位，且不能出现空格';
+                    }
+                    if (value == $('[name="username"]').val()) {
+                        return '不能和用户名不一致';
+                    }
+                },
+                confirm_password: function (value) {
+                    if (!new RegExp("^[\\S]{8,20}$").test(value)) {
+                        return '密码长度必须为8-20位';
+                    }
+                    if (value !== $('[name="password"]').val()) {
+                        return '两次输入的密码不一致';
+                    }
+                }
+            })
+        })
     </script>
 
 </body>

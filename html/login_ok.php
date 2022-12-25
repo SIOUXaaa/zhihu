@@ -42,13 +42,7 @@
     $_SESSION["atime"] = $atime;
     $_SESSION["id"] = $row['id'];
     echo "
-    <script>
-    alert('登录成功,欢迎来到FIY社区！');window.location='index.php';
-    // layui.use('layer',function(){
-    //     var layer=layui.layer;
-    //     layer.msg('登录成功,欢迎来到FIY社区！',{time:2000},window.location='index.php'); 
-    // })
-    </script>";
+    <script>alert('登录成功,欢迎来到FIY社区！');window.location='index.php';</script>";
     exit();
     ?>
 

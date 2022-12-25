@@ -13,13 +13,16 @@ if (!$conn) {
 }
 
 
-$name = $_POST["name"];
-$pass = $_POST["pass"];
+$name = $_POST["username"];
+$pass = $_POST["password"];
 $apass = $_POST["apass"];
 $atime = date("Y-m-d H:i:s");
-if($pass !=$apass){
-    echo "<script>alert('2次密码不一致，请重新输入');window.location='reg.html';</script>";
-    exit();
+// if($pass !=$apass){
+//     echo "<script>alert('2次密码不一致，请重新输入');window.location='reg.html';</script>";
+//     exit();
+// }
+if(strlen($pass)<8||strlen($pass)>20){
+    echo "<scipt>";
 }
 $sql = "select * from user where name='$name'";
 

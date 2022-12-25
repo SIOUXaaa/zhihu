@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>社区交流</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="孙吧">
-    <meta name="description" content="孙吧">
+    <meta name="keywords" content="子小口巴">
+    <meta name="description" content="子小口巴">
     <link rel="stylesheet" href="../res/layui/css/layui.css">
     <link rel="stylesheet" href="../res/css/global.css">
     <script src="../res/layui/layui.js"></script>
@@ -91,11 +91,12 @@
         <div class="layui-container">
             <ul class="layui-clear">
                 <li class="layui-hide-xs layui-this"><a href="index.php">首页</a></li>
-
-                <!-- 用户登录后显示 -->
+                <?php if(!empty($_SESSION["name"])) { ?>
+                // <!-- 用户登录后显示 -->
                 <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="my.php">我的贴子</a></li>
                 <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="mys.php">我的收藏</a></li>
                 <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="gz.php">我的关注</a></li>
+                <?php } ?>
             </ul>
 
             <div class="fly-column-right layui-hide-xs">
@@ -258,18 +259,35 @@
 
 
                 <div class="fly-panel fly-link">
-                    <h3 class="fly-panel-title">友情链接</h3>
+                    <h3 class="fly-panel-title">赞助商（假）</h3>
                     <dl class="fly-panel-main">
-                        <dd><a href="https://www.zhihu.com/signin?next=%2F" target="_blank">知乎</a>
                         <dd>
-                        <dd><a href="https://m.weibo.cn/" target="_blank">微博</a>
+                            <a href="http://www.relx.fund/">RELX悦刻</a>
+                        </dd>
+                        <br>
                         <dd>
-                        <dd><a href="https://www.dianping.com/citylist" target="_blank">大众点评</a>
+                            <a href="https://www.zhihu.com/signin?next=%2F" target="_blank">知乎（谢邀，人在美国，刚下飞机）</a>
+                        </dd>
+                        <br>
                         <dd>
-                        <dd><a href="https://www.huya.com/" target="_blank">虎牙</a>
+                            <a href="https://m.weibo.cn/" target="_blank">微博</a>
+                        </dd>
+                        <br>
                         <dd>
-                        <dd><a href="#" class="fly-link">更多友链（敬请期待）</a>
+                            <a href="https://www.dianping.com/citylist" target="_blank">大众点评</a>
+                        </dd>
+                        <br>
                         <dd>
+                            <a href="https://www.huya.com/" target="_blank">虎牙</a>
+                        </dd>
+                        <br>
+                        <dd>
+                            <a href="https://www.xiaohongshu.com/explore">小红书</a>
+                        </dd>
+                        <br>
+                        <dd><a href="#" class="fly-link">来点赞助好嘛？</a>
+                        </dd>
+                        
                     </dl>
                 </div>
 
@@ -278,7 +296,7 @@
     </div>
 
     <div class="fly-footer">
-        <p><a href="#" target="_blank">孙吧</a> 2022 &copy; <a href="#" target="_blank">延疑丁真
+        <p><a href="#" target="_blank">子小口巴</a> 2022 &copy; <a href="#" target="_blank">延疑丁真
                 出品</a></p>
     </div>
 
@@ -300,10 +318,6 @@
         }).use('fly');
     </script>
 
-    <!-- <script type="text/javascript">
-        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cspan id='cnzz_stat_icon_30088308'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30088308' type='text/javascript'%3E%3C/script%3E"));
-    </script> -->
 
 </body>
 

@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>社区交流</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="孙吧">
-    <meta name="description" content="孙吧">
+    <meta name="keywords" content="子小口巴">
+    <meta name="description" content="子小口巴">
     <link rel="stylesheet" href="../res/layui/css/layui.css">
     <link rel="stylesheet" href="../res/css/global.css">
 </head>
@@ -237,7 +237,7 @@
     </div>
 
     <div class="fly-footer">
-        <p><a href="#" target="_blank">孙吧</a> 2022 &copy; <a href="#" target="_blank">延疑丁真 出品</a></p>
+        <p><a href="#" target="_blank">子小口巴</a> 2022 &copy; <a href="#" target="_blank">延疑丁真 出品</a></p>
     </div>
 
     <script src="../res/layui/layui.js"></script>
