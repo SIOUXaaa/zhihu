@@ -87,7 +87,7 @@ $name = $_SESSION['name'];
             </ul>
 
             <div class="fly-column-right layui-hide-xs">
-                <a href="add.php" class="layui-btn">发表新帖</a>
+                <a href="add.php" class="layui-btn layui-btn-radius layui-btn-normal">发表新帖</a>
             </div>
         </div>
     </div>

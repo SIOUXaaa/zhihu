@@ -520,31 +520,31 @@ layui.define(['layer', 'laytpl', 'form', 'element', 'upload', 'util'], function(
   fly.newmsg();
 
   //发送激活邮件
-  fly.activate = function(email){
-    fly.json('/api/activate/', {}, function(res){
-      if(res.status === 0){
-        layer.alert('已成功将激活链接发送到了您的邮箱，接受可能会稍有延迟，请注意查收。', {
-          icon: 1
-        });
-      };
-    });
-  };
-  $('#LAY-activate').on('click', function(){
-    fly.activate($(this).attr('email'));
-  });
+//   fly.activate = function(email){
+//     fly.json('/api/activate/', {}, function(res){
+//       if(res.status === 0){
+//         layer.alert('已成功将激活链接发送到了您的邮箱，接受可能会稍有延迟，请注意查收。', {
+//           icon: 1
+//         });
+//       };
+//     });
+//   };
+//   $('#LAY-activate').on('click', function(){
+//     fly.activate($(this).attr('email'));
+//   });
 
   //点击@
-  $('body').on('click', '.fly-aite', function(){
-    var othis = $(this), text = othis.text();
-    if(othis.attr('href') !== 'javascript:;'){
-      return;
-    }
-    text = text.replace(/^@|（[\s\S]+?）/g, '');
-    othis.attr({
-      href: '/jump?username='+ text
-      ,target: '_blank'
-    });
-  });
+//   $('body').on('click', '.fly-aite', function(){
+//     var othis = $(this), text = othis.text();
+//     if(othis.attr('href') !== 'javascript:;'){
+//       return;
+//     }
+//     text = text.replace(/^@|（[\s\S]+?）/g, '');
+//     othis.attr({
+//       href: '/jump?username='+ text
+//       ,target: '_blank'
+//     });
+//   });
 
   //表单提交
   form.on('submit(*)', function(data){
@@ -587,16 +587,16 @@ layui.define(['layer', 'laytpl', 'form', 'element', 'upload', 'util'], function(
   });
 
   //手机设备的简单适配
-  var treeMobile = $('.site-tree-mobile')
-  ,shadeMobile = $('.site-mobile-shade')
+//   var treeMobile = $('.site-tree-mobile')
+//   ,shadeMobile = $('.site-mobile-shade')
 
-  treeMobile.on('click', function(){
-    $('body').addClass('site-mobile');
-  });
+//   treeMobile.on('click', function(){
+//     $('body').addClass('site-mobile');
+//   });
 
-  shadeMobile.on('click', function(){
-    $('body').removeClass('site-mobile');
-  });
+//   shadeMobile.on('click', function(){
+//     $('body').removeClass('site-mobile');
+//   });
 
   //获取统计数据
   $('.fly-handles').each(function(){
@@ -607,16 +607,16 @@ layui.define(['layer', 'laytpl', 'form', 'element', 'upload', 'util'], function(
   });
   
   //固定Bar
-  util.fixbar({
-    bar1: '&#xe642;'
-    ,bgcolor: '#009688'
-    ,click: function(type){
-      if(type === 'bar1'){
-        layer.msg('打开 index.js，开启发表新帖的路径');
-        //location.href = 'jie/add.html';
-      }
-    }
-  });
+//   util.fixbar({
+//     bar1: '&#xe642;'
+//     ,bgcolor: '#009688'
+//     ,click: function(type){
+//       if(type === 'bar1'){
+//         // layer.msg('打开 index.js，开启发表新帖的路径');
+//         location.href = '../html/add.php';
+//       }
+//     }
+//   });
 
   exports('fly', fly);
 
