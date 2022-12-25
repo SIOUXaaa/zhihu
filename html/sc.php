@@ -52,4 +52,3 @@ else{
     echo "<script>alert('收藏失败，请稍后重新尝试');window.location='index.php';</script>";
     exit();
 }
-?>

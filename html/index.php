@@ -30,7 +30,7 @@
     <div class="fly-header layui-bg-black ">
         <div class="layui-container">
             <a class="fly-logo" href="index.php">
-                <img src="../res/images/igotyou.png" alt="layui" style="height: 50px;">
+                <img src="../res/images/igotyou.png" alt="layui" style="height: 42px;">
             </a>
             <ul class="layui-nav fly-nav layui-hide-xs">
                 <li class="layui-nav-item layui-this">
@@ -42,13 +42,15 @@
             </ul>
 
             <ul class="layui-nav fly-nav-user">
-                <li class="layui-nav-item">
+                <!-- <li class="layui-nav-item">
                     <a class="iconfont icon-touxiang layui-hide-xs" href="home.php"></a>
-                </li>
+                </li> -->
                 <?php
                 if (empty($_SESSION["name"])) {
                 ?>
-
+                    <li class="layui-nav-item">
+                        <a class="iconfont icon-touxiang layui-hide-xs" href="home.php"></a>
+                    </li>
                     <li class="layui-nav-item">
                         <a href="login.html">登入</a>
                     </li>
@@ -58,6 +60,11 @@
                 <?php } else { ?>
                     <!-- 登入后的状态 -->
                     <li class="layui-nav-item">
+                        <a class="iconfont layui-hide-xs" href="home.php">
+                            <img src="https://cdn.imgcn.top/20201128/2b639c3f75008ab57834f8f85a2407cc.jpg" alt="延疑丁真" style="height:34px;border-radius:25px;">
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
                         <a class="fly-nav-avatar" href="javascript:;">
                             <cite class="layui-hide-xs">
                                 <?php echo $_SESSION['name'] ?>
@@ -66,10 +73,10 @@
                         </a>
                         <dl class="layui-nav-child">
                             <dd><a href="my.php"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息</a></dd>
-                            <dd><a href="home.php"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>
+                            <dd><a href="home.php"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>看看主页</a>
                             </dd>
                             <hr style="margin: 5px 0;">
-                            <dd><a href="logout.php" style="text-align: center;">退出</a></dd>
+                            <dd><a href="logout.php" style="text-align: center;">我先润了</a></dd>
                         </dl>
                     </li>
                 <?php } ?>
@@ -86,13 +93,13 @@
                 <li class="layui-hide-xs layui-this"><a href="index.php">首页</a></li>
 
                 <!-- 用户登入后显示 -->
-                <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="my.php">我发表的贴</a></li>
-                <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="mys.php">我收藏的贴</a></li>
+                <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="my.php">我的贴子</a></li>
+                <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="mys.php">我的收藏</a></li>
                 <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="gz.php">我的关注</a></li>
             </ul>
 
             <div class="fly-column-right layui-hide-xs">
-                <a href="add.php" class="layui-btn layui-btn-radius layui-btn-normal">发表新帖</a>
+                <a href="add.php" class="layui-btn layui-btn-radius layui-btn-normal">水个贴先 ~</a>
             </div>
         </div>
     </div>
@@ -202,7 +209,7 @@
                     </ul>
                     <div style="text-align: center">
                         <div class="laypage-main">
-                            <a href="#" class="laypage-next">敬请期待</a>
+                            <a href="#" class="laypage-next">下面没有了捏，要不你写点？</a>
                         </div>
                     </div>
 
@@ -210,7 +217,7 @@
             </div>
             <div class="layui-col-md4">
 
-                <div class="fly-panel">
+                <!-- <div class="fly-panel">
 
                 </div>
 
@@ -221,10 +228,10 @@
 
                 <div class="fly-panel fly-rank fly-rank-reply" id="LAY_replyRank">
 
-                </div>
+                </div> -->
 
                 <dl class="fly-panel fly-list-one">
-                    <dt class="fly-panel-title">本周热议</dt>
+                    <dt class="fly-panel-title">大伙在看啥？</dt>
                     <?php
 
                     $sql1 = "select  *  from pl";
@@ -271,7 +278,7 @@
     </div>
 
     <div class="fly-footer">
-        <p><a href="#" target="_blank">孙吧</a> 2022 &copy; <a href="#" target="_blank">小超人
+        <p><a href="#" target="_blank">孙吧</a> 2022 &copy; <a href="#" target="_blank">延疑丁真
                 出品</a></p>
     </div>
 
@@ -293,7 +300,7 @@
         }).use('fly');
     </script>
 
-        <!-- <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cspan id='cnzz_stat_icon_30088308'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30088308' type='text/javascript'%3E%3C/script%3E"));
     </script> -->

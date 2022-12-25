@@ -30,7 +30,7 @@
     <div class="fly-header layui-bg-black">
         <div class="layui-container">
             <a class="fly-logo" href="index.php">
-                <img src="../res/images/igotyou.png" alt="layui"  style="height: 50px;">
+                <img src="../res/images/igotyou.png" alt="layui" style="height: 42px;">
             </a>
             <ul class="layui-nav fly-nav layui-hide-xs">
                 <li class="layui-nav-item layui-this">
@@ -43,13 +43,12 @@
             </ul>
 
             <ul class="layui-nav fly-nav-user">
-                <li class="layui-nav-item">
-                    <a class="iconfont icon-touxiang layui-hide-xs" href="index.php"></a>
-                </li>
                 <?php
                 if (empty($_SESSION["name"])) {
                 ?>
-
+                    <li class="layui-nav-item">
+                        <a class="iconfont icon-touxiang layui-hide-xs" href="home.php"></a>
+                    </li>
                     <li class="layui-nav-item">
                         <a href="login.html">登入</a>
                     </li>
@@ -59,14 +58,21 @@
                 <?php } else { ?>
                     <!-- 登入后的状态 -->
                     <li class="layui-nav-item">
+                        <a class="iconfont layui-hide-xs" href="home.php">
+                            <img src="https://cdn.imgcn.top/20201128/2b639c3f75008ab57834f8f85a2407cc.jpg" alt="延疑丁真" style="height:34px;border-radius:25px;">
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
                         <a class="fly-nav-avatar" href="javascript:;">
-                            <cite class="layui-hide-xs"><?php echo  $_SESSION['name'] ?></cite>
-
+                            <cite class="layui-hide-xs">
+                                <?php echo $_SESSION['name'] ?>
+                            </cite>
+                            <!--  -->
                         </a>
                         <dl class="layui-nav-child">
-
                             <dd><a href="my.php"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息</a></dd>
-                            <dd><a href="home.php"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a></dd>
+                            <dd><a href="home.php"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>
+                            </dd>
                             <hr style="margin: 5px 0;">
                             <dd><a href="logout.php" style="text-align: center;">退出</a></dd>
                         </dl>
@@ -123,7 +129,7 @@
                         <div class="fly-detail-user">
                             <a href="home.php" class="fly-link">
                                 <cite><?php echo $res['uname'] ?></cite>
-                                <i class="iconfont icon-renzheng" title="#"></i>
+                                <!-- <i class="iconfont icon-renzheng" title="#"></i> -->
 
                             </a>
                             <span><?php echo $res['atime'] ?></span>
@@ -194,12 +200,12 @@
                             <div class="layui-form-item layui-form-text">
                                 <a name="comment"></a>
                                 <div class="layui-input-block">
-                                    <textarea id="L_content" name="title" required lay-verify="required" placeholder="请输入内容" class="layui-textarea fly-editor" style="height: 150px;"></textarea>
+                                    <textarea id="L_content" name="title" required lay-verify="required" placeholder="来点大伙想看的！" class="layui-textarea fly-editor" style="height: 150px;"></textarea>
                                 </div>
                             </div>
-                            <div class="layui-form-item">
-                                <input type="hidden" name="jid" value="123">
-                                <button class="layui-btn" lay-filter="*" lay-submit>提交回复</button>
+                            <div class="layui-form-item" style="text-align: center;">
+                                <!-- <input type="hidden" name="jid" value="123"> -->
+                                <button class="layui-btn layui-btn-radius" lay-filter="*" lay-submit>经验加三~</button>
                             </div>
                         </form>
                     </div>
