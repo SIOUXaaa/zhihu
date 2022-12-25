@@ -5,7 +5,7 @@
   <title>用户中心</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="keywords" content="fly">
-  <meta name="description" content="Fly社区">
+  <meta name="description" content="孙吧">
   <link rel="stylesheet" href="../res/layui/css/layui.css">
   <link rel="stylesheet" href="../res/css/global.css">
 </head>
@@ -156,7 +156,7 @@ if(empty($name)){
 </div>
 
 <div class="fly-footer">
-    <p><a href="#" target="_blank">Fly社区</a> 2022 &copy; <a href="#" target="_blank">小超人 出品</a></p>
+    <p><a href="#" target="_blank">孙吧</a> 2022 &copy; <a href="#" target="_blank">小超人 出品</a></p>
 </div>
 
 <script src="../res/layui/layui.js"></script>

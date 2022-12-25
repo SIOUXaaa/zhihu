@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>社区交流</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Fly社区">
-    <meta name="description" content="Fly社区">
+    <meta name="keywords" content="孙吧">
+    <meta name="description" content="孙吧">
     <link rel="stylesheet" href="../res/layui/css/layui.css">
     <link rel="stylesheet" href="../res/css/global.css">
     <script src="../res/layui/layui.js"></script>
@@ -114,7 +114,7 @@
                         ?>
                         <li>
                             <a href="my.php" class="fly-avatar">
-                                <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="贤心">
+                                <img src="https://cdn.imgcn.top/20201128/2b639c3f75008ab57834f8f85a2407cc.jpg" alt="延疑丁真">
                             </a>
                             <h2>
                                 <a class="layui-badge">动态</a>
@@ -162,7 +162,7 @@
                         ?>
                             <li>
                                 <a href="my.php" class="fly-avatar">
-                                    <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="贤心">
+                                    <img src="https://cdn.imgcn.top/20201128/2b639c3f75008ab57834f8f85a2407cc.jpg" alt="延疑丁真">
                                 </a>
                                 <h2>
                                     <a class="layui-badge">论坛</a>
@@ -271,7 +271,7 @@
     </div>
 
     <div class="fly-footer">
-        <p><a href="#" target="_blank">Fly社区</a> 2022 &copy; <a href="#" target="_blank">小超人
+        <p><a href="#" target="_blank">孙吧</a> 2022 &copy; <a href="#" target="_blank">小超人
                 出品</a></p>
     </div>
 

@@ -1,6 +1,6 @@
 ﻿/**
 
- @Name: Fly社区主入口
+ @Name: 孙吧主入口
 
  */
  
@@ -20,7 +20,7 @@ layui.define(['layer', 'laytpl', 'form', 'element', 'upload', 'util'], function(
   
   //阻止IE7以下访问
   if(device.ie && device.ie < 8){
-    layer.alert('如果您非得使用 IE 浏览器访问Fly社区，那么请使用 IE8+');
+    layer.alert('如果您非得使用 IE 浏览器访问孙吧，那么请使用 IE8+');
   }
   
   layui.focusInsert = function(obj, str){

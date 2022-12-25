@@ -76,8 +76,8 @@
     </div>
 
     <div class="fly-home fly-panel" style="background-image: url();">
-        <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="贤心">
-        <i class="iconfont icon-renzheng" title="Fly社区认证"></i>
+        <img src="https://cdn.imgcn.top/20201128/2b639c3f75008ab57834f8f85a2407cc.jpg" alt="延疑丁真">
+        <i class="iconfont icon-renzheng" title="孙吧认证"></i>
         <h1>
             <?php echo $_SESSION['name'] ?>
             <i class="iconfont icon-nan"></i>
@@ -158,7 +158,7 @@
 
 
     <div class="fly-footer">
-        <p><a href="#" target="_blank">Fly社区</a> 2022 &copy; <a href="#" target="_blank">小超人 出品</a></p>
+        <p><a href="#" target="_blank">孙吧</a> 2022 &copy; <a href="#" target="_blank">小超人 出品</a></p>
     </div>
 
     <script>
