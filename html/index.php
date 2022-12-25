@@ -62,7 +62,7 @@
                             <cite class="layui-hide-xs">
                                 <?php echo $_SESSION['name'] ?>
                             </cite>
-                            <!-- <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：Lay 作者"></i> -->
+                            <!--  -->
                         </a>
                         <dl class="layui-nav-child">
                             <dd><a href="my.php"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息</a></dd>
@@ -103,7 +103,7 @@
                 <div class="fly-panel">
                     <div class="fly-panel-title fly-filter">
                         <a>置顶</a>
-                        <a href="#signin" class="layui-hide-sm layui-show-xs-block fly-right" id="LAY_goSignin" style="color: #FF5722;">去签到</a>
+                        <!-- <a href="#signin" class="layui-hide-sm layui-show-xs-block fly-right" id="LAY_goSignin" style="color: #FF5722;">去签到</a> -->
                     </div>
                     <ul class="fly-list">
                         <?php

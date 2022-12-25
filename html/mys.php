@@ -61,7 +61,7 @@ if(empty($name)){
             <li class="layui-nav-item">
                 <a class="fly-nav-avatar" href="javascript:;">
                     <cite class="layui-hide-xs"><?php echo  $_SESSION['name']?></cite>
-                    <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：Lay 作者"></i>
+                    
                 </a>
                 <dl class="layui-nav-child">
 
