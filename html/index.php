@@ -92,9 +92,12 @@
             <ul class="layui-clear">
                 <li class="layui-hide-xs layui-this"><a href="index.php">首页</a></li>
                 <?php if(!empty($_SESSION["name"])) { ?>
-                // <!-- 用户登录后显示 -->
+                 <!-- 用户登录后显示 -->
+                 <span>|</span>
                 <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="my.php">我的贴子</a></li>
+                <span>|</span>
                 <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="mys.php">我的收藏</a></li>
+                <span>|</span>
                 <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="gz.php">我的关注</a></li>
                 <?php } ?>
             </ul>
@@ -302,6 +305,9 @@
 
 
     <script>
+        layui.use('element',function(){
+            var element=layui.element;
+        })
         layui.cache.page = '';
         layui.cache.user = {
             username: '游客',

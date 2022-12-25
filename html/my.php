@@ -169,6 +169,9 @@
 
     <script src="../res/layui/layui.js"></script>
     <script>
+        layui.use('element',function(){
+            var element=layui.element;
+        })
         layui.cache.page = 'user';
         layui.cache.user = {
             username: '游客',
