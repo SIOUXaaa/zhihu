@@ -50,13 +50,13 @@
                         <a class="iconfont icon-touxiang layui-hide-xs" href="home.php"></a>
                     </li>
                     <li class="layui-nav-item">
-                        <a href="login.html">登入</a>
+                        <a href="login.html">登录</a>
                     </li>
                     <li class="layui-nav-item">
                         <a href="reg.html">注册</a>
                     </li>
                 <?php } else { ?>
-                    <!-- 登入后的状态 -->
+                    <!-- 登录后的状态 -->
                     <li class="layui-nav-item">
                         <a class="iconfont layui-hide-xs" href="home.php">
                             <img src="https://cdn.imgcn.top/20201128/2b639c3f75008ab57834f8f85a2407cc.jpg" alt="延疑丁真" style="height:34px;border-radius:25px;">
@@ -88,7 +88,7 @@
                 <ul class="layui-clear">
                     <li class="layui-hide-xs layui-this"><a href="index.php">首页</a></li>
 
-                    <!-- 用户登入后显示 -->
+                    <!-- 用户登录后显示 -->
                     <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="my.php">我发表的贴</a></li>
                     <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="my.php#collection">我收藏的贴</a></li>
                     <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="my.php#collection">我的关注</a></li>

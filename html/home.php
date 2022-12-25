@@ -49,13 +49,13 @@
                         <a class="iconfont icon-touxiang layui-hide-xs" href="home.php"></a>
                     </li>
                     <li class="layui-nav-item">
-                        <a href="login.html">登入</a>
+                        <a href="login.html">登录</a>
                     </li>
                     <li class="layui-nav-item">
                         <a href="reg.html">注册</a>
                     </li>
                 <?php } else { ?>
-                    <!-- 登入后的状态 -->
+                    <!-- 登录后的状态 -->
                     <li class="layui-nav-item">
                         <a class="iconfont layui-hide-xs" href="home.php">
                             <img src="https://cdn.imgcn.top/20201128/2b639c3f75008ab57834f8f85a2407cc.jpg" alt="延疑丁真" style="height:34px;border-radius:25px;">
@@ -91,9 +91,9 @@
         <!-- <p style="padding: 10px 0; color: #5FB878;">认证信息：FLY 作者</p> -->
 
         <p class="fly-home-info">
-            <i class="iconfont icon-kiss" title="飞吻"></i><span style="color: #FF7200;">不抛弃、不放弃。</span>
+            <i class="iconfont icon-kiss" title="飞吻"></i><span style="color: #FF7200;">电子烟，我只抽悦刻5代</span>
             <i class="iconfont icon-shijian"></i><span><?php echo $_SESSION['atime'] ?> 加入</span>
-            <i class="iconfont icon-chengshi"></i><span>来自中国</span>
+            <i class="iconfont icon-chengshi"></i><span>康巴上的汉子</span>
         </p>
 
         <p class="fly-home-sign">理想是一面旗帜，信念是一枚火炬。</p>
@@ -108,7 +108,7 @@
         <div class="layui-row layui-col-space15">
             <div class="layui-col-md6 fly-home-jie">
                 <div class="fly-panel">
-                    <h3 class="fly-panel-title"> <?php echo $_SESSION['name'] ?> 最近的提问</h3>
+                    <h3 class="fly-panel-title"> <?php echo $_SESSION['name'] ?> 最近问了啥</h3>
                     <ul class="jie-row">
                         <?php
                         $sql1 = "select  *  from pl where uname=" . $name;
@@ -132,7 +132,7 @@
 
             <div class="layui-col-md6 fly-home-da">
                 <div class="fly-panel">
-                    <h3 class="fly-panel-title"><?php echo $_SESSION['name'] ?> 最近的回答</h3>
+                    <h3 class="fly-panel-title"><?php echo $_SESSION['name'] ?> 最近答了啥</h3>
                     <ul class="home-jieda">
                         <?php
 
