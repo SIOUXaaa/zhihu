@@ -277,63 +277,63 @@ layui.define(['layer', 'laytpl', 'form', 'element', 'upload', 'util'], function(
     }
     
     //新消息通知
-    ,newmsg: function(){
-      var elemUser = $('.fly-nav-user');
-      if(layui.cache.user.uid !== -1 && elemUser[0]){
-        fly.json('/message/nums/', {
-          _: new Date().getTime()
-        }, function(res){
-          if(res.status === 0 && res.count > 0){
-            var msg = $('<a class="fly-nav-msg" href="javascript:;">'+ res.count +'</a>');
-            elemUser.append(msg);
-            msg.on('click', function(){
-              fly.json('/message/read', {}, function(res){
-                if(res.status === 0){
-                  location.href = '/user/message/';
-                }
-              });
-            });
-            layer.tips('你有 '+ res.count +' 条未读消息', msg, {
-              tips: 3
-              ,tipsMore: true
-              ,fixed: true
-            });
-            msg.on('mouseenter', function(){
-              layer.closeAll('tips');
-            })
-          }
-        });
-      }
-      return arguments.callee;
-    }
+    // ,newmsg: function(){
+    //   var elemUser = $('.fly-nav-user');
+    //   if(layui.cache.user.uid !== -1 && elemUser[0]){
+    //     fly.json('/message/nums/', {
+    //       _: new Date().getTime()
+    //     }, function(res){
+    //       if(res.status === 0 && res.count > 0){
+    //         var msg = $('<a class="fly-nav-msg" href="javascript:;">'+ res.count +'</a>');
+    //         elemUser.append(msg);
+    //         msg.on('click', function(){
+    //           fly.json('/message/read', {}, function(res){
+    //             if(res.status === 0){
+    //               location.href = '/user/message/';
+    //             }
+    //           });
+    //         });
+    //         layer.tips('你有 '+ res.count +' 条未读消息', msg, {
+    //           tips: 3
+    //           ,tipsMore: true
+    //           ,fixed: true
+    //         });
+    //         msg.on('mouseenter', function(){
+    //           layer.closeAll('tips');
+    //         })
+    //       }
+    //     });
+    //   }
+    //   return arguments.callee;
+    // }
     
   };
 
   //签到
-  var tplSignin = ['{{# if(d.signed){ }}'
-    ,'<button class="layui-btn layui-btn-disabled">今日已签到</button>'
-    ,'<span>获得了<cite>{{ d.experience }}</cite>飞吻</span>'
-  ,'{{# } else { }}'
-    ,'<button class="layui-btn layui-btn-danger" id="LAY_signin">今日签到</button>'
-    ,'<span>可获得<cite>{{ d.experience }}</cite>飞吻</span>'
-  ,'{{# } }}'].join('')
-  ,tplSigninDay = '已连续签到<cite>{{ d.days }}</cite>天'
+//   var tplSignin = ['{{# if(d.signed){ }}'
+//     ,'<button class="layui-btn layui-btn-disabled">今日已签到</button>'
+//     ,'<span>获得了<cite>{{ d.experience }}</cite>飞吻</span>'
+//   ,'{{# } else { }}'
+//     ,'<button class="layui-btn layui-btn-danger" id="LAY_signin">今日签到</button>'
+//     ,'<span>可获得<cite>{{ d.experience }}</cite>飞吻</span>'
+//   ,'{{# } }}'].join('')
+//   ,tplSigninDay = '已连续签到<cite>{{ d.days }}</cite>天'
 
-  ,signRender = function(data){
-    laytpl(tplSignin).render(data, function(html){
-      elemSigninMain.html(html);
-    });
-    laytpl(tplSigninDay).render(data, function(html){
-      elemSigninDays.html(html);
-    });
-  }
+//   ,signRender = function(data){
+//     laytpl(tplSignin).render(data, function(html){
+//       elemSigninMain.html(html);
+//     });
+//     laytpl(tplSigninDay).render(data, function(html){
+//       elemSigninDays.html(html);
+//     });
+//   }
 
-  ,elemSigninHelp = $('#LAY_signinHelp')
-  ,elemSigninTop = $('#LAY_signinTop')
-  ,elemSigninMain = $('.fly-signin-main')
-  ,elemSigninDays = $('.fly-signin-days');
+//   ,elemSigninHelp = $('#LAY_signinHelp')
+//   ,elemSigninTop = $('#LAY_signinTop')
+//   ,elemSigninMain = $('.fly-signin-main')
+//   ,elemSigninDays = $('.fly-signin-days');
   
-  if(elemSigninMain[0]){
+//   if(elemSigninMain[0]){
     /*
     fly.json('/sign/status', function(res){
       if(!res.data) return;
@@ -341,129 +341,129 @@ layui.define(['layer', 'laytpl', 'form', 'element', 'upload', 'util'], function(
       signRender(res.data);
     });
     */
-  }
-  $('body').on('click', '#LAY_signin', function(){
-    var othis = $(this);
-    if(othis.hasClass(DISABLED)) return;
+//   }
+//   $('body').on('click', '#LAY_signin', function(){
+//     var othis = $(this);
+//     if(othis.hasClass(DISABLED)) return;
 
-    fly.json('/sign/in', {
-      token: signRender.token || 1
-    }, function(res){
-      signRender(res.data);
-    }, {
-      error: function(){
-        othis.removeClass(DISABLED);
-      }
-    });
+//     fly.json('/sign/in', {
+//       token: signRender.token || 1
+//     }, function(res){
+//       signRender(res.data);
+//     }, {
+//       error: function(){
+//         othis.removeClass(DISABLED);
+//       }
+//     });
 
-    othis.addClass(DISABLED);
-  });
+//     othis.addClass(DISABLED);
+//   });
 
   //签到说明
-  elemSigninHelp.on('click', function(){
-    layer.open({
-      type: 1
-      ,title: '签到说明'
-      ,area: '300px'
-      ,shade: 0.8
-      ,shadeClose: true
-      ,content: ['<div class="layui-text" style="padding: 20px;">'
-        ,'<blockquote class="layui-elem-quote">“签到”可获得社区飞吻，规则如下</blockquote>'
-        ,'<table class="layui-table">'
-          ,'<thead>'
-            ,'<tr><th>连续签到天数</th><th>每天可获飞吻</th></tr>'
-          ,'</thead>'
-          ,'<tbody>'
-            ,'<tr><td>＜5</td><td>5</td></tr>'
-            ,'<tr><td>≥5</td><td>10</td></tr>'
-            ,'<tr><td>≥15</td><td>15</td></tr>'
-            ,'<tr><td>≥30</td><td>20</td></tr>'
-          ,'</tbody>'
-        ,'</table>'
-        ,'<ul>'
-          ,'<li>中间若有间隔，则连续天数重新计算</li>'
-          ,'<li style="color: #FF5722;">不可利用程序自动签到，否则飞吻清零</li>'
-        ,'</ul>'
-      ,'</div>'].join('')
-    });
-  });
+//   elemSigninHelp.on('click', function(){
+//     layer.open({
+//       type: 1
+//       ,title: '签到说明'
+//       ,area: '300px'
+//       ,shade: 0.8
+//       ,shadeClose: true
+//       ,content: ['<div class="layui-text" style="padding: 20px;">'
+//         ,'<blockquote class="layui-elem-quote">“签到”可获得社区飞吻，规则如下</blockquote>'
+//         ,'<table class="layui-table">'
+//           ,'<thead>'
+//             ,'<tr><th>连续签到天数</th><th>每天可获飞吻</th></tr>'
+//           ,'</thead>'
+//           ,'<tbody>'
+//             ,'<tr><td>＜5</td><td>5</td></tr>'
+//             ,'<tr><td>≥5</td><td>10</td></tr>'
+//             ,'<tr><td>≥15</td><td>15</td></tr>'
+//             ,'<tr><td>≥30</td><td>20</td></tr>'
+//           ,'</tbody>'
+//         ,'</table>'
+//         ,'<ul>'
+//           ,'<li>中间若有间隔，则连续天数重新计算</li>'
+//           ,'<li style="color: #FF5722;">不可利用程序自动签到，否则飞吻清零</li>'
+//         ,'</ul>'
+//       ,'</div>'].join('')
+//     });
+//   });
 
   //签到活跃榜
-  var tplSigninTop = ['{{# layui.each(d.data, function(index, item){ }}'
-    ,'<li>'
-      ,'<a href="/u/{{item.uid}}" target="_blank">'
-        ,'<img src="{{item.user.avatar}}">'
-        ,'<cite class="fly-link">{{item.user.username}}</cite>'
-      ,'</a>'
-      ,'{{# var date = new Date(item.time); if(d.index < 2){ }}'
-        ,'<span class="fly-grey">签到于 {{ layui.laytpl.digit(date.getHours()) + ":" + layui.laytpl.digit(date.getMinutes()) + ":" + layui.laytpl.digit(date.getSeconds()) }}</span>'
-      ,'{{# } else { }}'
-        ,'<span class="fly-grey">已连续签到 <i>{{ item.days }}</i> 天</span>'
-      ,'{{# } }}'
-    ,'</li>'
-  ,'{{# }); }}'
-  ,'{{# if(d.data.length === 0) { }}'
-    ,'{{# if(d.index < 2) { }}'
-      ,'<li class="fly-none fly-grey">今天还没有人签到</li>'
-    ,'{{# } else { }}'
-      ,'<li class="fly-none fly-grey">还没有签到记录</li>'
-    ,'{{# } }}'
-  ,'{{# } }}'].join('');
+//   var tplSigninTop = ['{{# layui.each(d.data, function(index, item){ }}'
+//     ,'<li>'
+//       ,'<a href="/u/{{item.uid}}" target="_blank">'
+//         ,'<img src="{{item.user.avatar}}">'
+//         ,'<cite class="fly-link">{{item.user.username}}</cite>'
+//       ,'</a>'
+//       ,'{{# var date = new Date(item.time); if(d.index < 2){ }}'
+//         ,'<span class="fly-grey">签到于 {{ layui.laytpl.digit(date.getHours()) + ":" + layui.laytpl.digit(date.getMinutes()) + ":" + layui.laytpl.digit(date.getSeconds()) }}</span>'
+//       ,'{{# } else { }}'
+//         ,'<span class="fly-grey">已连续签到 <i>{{ item.days }}</i> 天</span>'
+//       ,'{{# } }}'
+//     ,'</li>'
+//   ,'{{# }); }}'
+//   ,'{{# if(d.data.length === 0) { }}'
+//     ,'{{# if(d.index < 2) { }}'
+//       ,'<li class="fly-none fly-grey">今天还没有人签到</li>'
+//     ,'{{# } else { }}'
+//       ,'<li class="fly-none fly-grey">还没有签到记录</li>'
+//     ,'{{# } }}'
+//   ,'{{# } }}'].join('');
 
-  elemSigninTop.on('click', function(){
-    var loadIndex = layer.load(1, {shade: 0.8});
-    fly.json('../json/signin.js', function(res){ //实际使用，请将 url 改为真实接口
-      var tpl = $(['<div class="layui-tab layui-tab-brief" style="margin: 5px 0 0;">'
-        ,'<ul class="layui-tab-title">'
-          ,'<li class="layui-this">最新签到</li>'
-          ,'<li>今日最快</li>'
-          ,'<li>总签到榜</li>'
-        ,'</ul>'
-        ,'<div class="layui-tab-content fly-signin-list" id="LAY_signin_list">'
-          ,'<ul class="layui-tab-item layui-show"></ul>'
-          ,'<ul class="layui-tab-item">2</ul>'
-          ,'<ul class="layui-tab-item">3</ul>'
-        ,'</div>'
-      ,'</div>'].join(''))
-      ,signinItems = tpl.find('.layui-tab-item');
+//   elemSigninTop.on('click', function(){
+//     var loadIndex = layer.load(1, {shade: 0.8});
+//     fly.json('../json/signin.js', function(res){ //实际使用，请将 url 改为真实接口
+//       var tpl = $(['<div class="layui-tab layui-tab-brief" style="margin: 5px 0 0;">'
+//         ,'<ul class="layui-tab-title">'
+//           ,'<li class="layui-this">最新签到</li>'
+//           ,'<li>今日最快</li>'
+//           ,'<li>总签到榜</li>'
+//         ,'</ul>'
+//         ,'<div class="layui-tab-content fly-signin-list" id="LAY_signin_list">'
+//           ,'<ul class="layui-tab-item layui-show"></ul>'
+//           ,'<ul class="layui-tab-item">2</ul>'
+//           ,'<ul class="layui-tab-item">3</ul>'
+//         ,'</div>'
+//       ,'</div>'].join(''))
+//       ,signinItems = tpl.find('.layui-tab-item');
 
-      layer.close(loadIndex);
+//       layer.close(loadIndex);
 
-      layui.each(signinItems, function(index, item){
-        var html = laytpl(tplSigninTop).render({
-          data: res.data[index]
-          ,index: index
-        });
-        $(item).html(html);
-      });
+//       layui.each(signinItems, function(index, item){
+//         var html = laytpl(tplSigninTop).render({
+//           data: res.data[index]
+//           ,index: index
+//         });
+//         $(item).html(html);
+//       });
 
-      layer.open({
-        type: 1
-        ,title: '签到活跃榜 - TOP 20'
-        ,area: '300px'
-        ,shade: 0.8
-        ,shadeClose: true
-        ,id: 'layer-pop-signintop'
-        ,content: tpl.prop('outerHTML')
-      });
+//       layer.open({
+//         type: 1
+//         ,title: '签到活跃榜 - TOP 20'
+//         ,area: '300px'
+//         ,shade: 0.8
+//         ,shadeClose: true
+//         ,id: 'layer-pop-signintop'
+//         ,content: tpl.prop('outerHTML')
+//       });
 
-    }, {type: 'get'});
-  });
+//     }, {type: 'get'});
+//   });
 
 
   //回帖榜
-  var tplReply = ['{{# layui.each(d.data, function(index, item){ }}'
-    ,'<dd>'
-      ,'<a href="/u/{{item.uid}}">'
-        ,'<img src="{{item.user.avatar}}">'
-        ,'<cite>{{item.user.username}}</cite>'
-        ,'<i>{{item["count(*)"]}}次回答</i>'
-      ,'</a>'
-    ,'</dd>'
-  ,'{{# }); }}'].join('')
-  ,elemReply = $('#LAY_replyRank');
+//   var tplReply = ['{{# layui.each(d.data, function(index, item){ }}'
+//     ,'<dd>'
+//       ,'<a href="/u/{{item.uid}}">'
+//         ,'<img src="{{item.user.avatar}}">'
+//         ,'<cite>{{item.user.username}}</cite>'
+//         ,'<i>{{item["count(*)"]}}次回答</i>'
+//       ,'</a>'
+//     ,'</dd>'
+//   ,'{{# }); }}'].join('')
+//   ,elemReply = $('#LAY_replyRank');
 
-  if(elemReply[0]){
+//   if(elemReply[0]){
     /*
     fly.json('/top/reply/', {
       limit: 20
@@ -472,52 +472,52 @@ layui.define(['layer', 'laytpl', 'form', 'element', 'upload', 'util'], function(
       elemReply.find('dl').html(html);
     });
     */
-  };
+//   };
 
   //相册
-  if($(window).width() > 750){
-    layer.photos({
-      photos: '.photos'
-      ,zIndex: 9999999999
-      ,anim: -1
-    });
-  } else {
-    $('body').on('click', '.photos img', function(){
-      window.open(this.src);
-    });
-  }
+//   if($(window).width() > 750){
+//     layer.photos({
+//       photos: '.photos'
+//       ,zIndex: 9999999999
+//       ,anim: -1
+//     });
+//   } else {
+//     $('body').on('click', '.photos img', function(){
+//       window.open(this.src);
+//     });
+//   }
 
 
   //搜索
-  $('.fly-search').on('click', function(){
-    layer.open({
-      type: 1
-      ,title: false
-      ,closeBtn: false
-      //,shade: [0.1, '#fff']
-      ,shadeClose: true
-      ,maxWidth: 10000
-      ,skin: 'fly-layer-search'
-      ,content: ['<form action="http://cn.bing.com/search">'
-        ,'<input autocomplete="off" placeholder="搜索内容，回车跳转" type="text" name="q">'
-      ,'</form>'].join('')
-      ,success: function(layero){
-        var input = layero.find('input');
-        input.focus();
+//   $('.fly-search').on('click', function(){
+//     layer.open({
+//       type: 1
+//       ,title: false
+//       ,closeBtn: false
+//       //,shade: [0.1, '#fff']
+//       ,shadeClose: true
+//       ,maxWidth: 10000
+//       ,skin: 'fly-layer-search'
+//       ,content: ['<form action="http://cn.bing.com/search">'
+//         ,'<input autocomplete="off" placeholder="搜索内容，回车跳转" type="text" name="q">'
+//       ,'</form>'].join('')
+//       ,success: function(layero){
+//         var input = layero.find('input');
+//         input.focus();
 
-        layero.find('form').submit(function(){
-          var val = input.val();
-          if(val.replace(/\s/g, '') === ''){
-            return false;
-          }
-          input.val('site:layui.com '+ input.val());
-      });
-      }
-    })
-  });
+//         layero.find('form').submit(function(){
+//           var val = input.val();
+//           if(val.replace(/\s/g, '') === ''){
+//             return false;
+//           }
+//           input.val('site:layui.com '+ input.val());
+//       });
+//       }
+//     })
+//   });
 
   //新消息通知
-  fly.newmsg();
+//   fly.newmsg();
 
   //发送激活邮件
 //   fly.activate = function(email){

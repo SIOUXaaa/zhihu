@@ -111,8 +111,8 @@
                     <h3 class="fly-panel-title"> <?php echo $_SESSION['name'] ?> 最近问了啥</h3>
                     <ul class="jie-row">
                         <?php
-                        $sql1 = "select  *  from pl where uname=" . $name;
-
+                        $sql1 = "select  *  from pl where uname=" . "'" . $name . "'";
+                        // echo $sql1;
                         $rs1 = mysqli_query($conn, $sql1);
                         $rows = array();
                         while ($rs1 && $row = mysqli_fetch_assoc($rs1)) {
@@ -136,7 +136,7 @@
                     <ul class="home-jieda">
                         <?php
 
-                        $sql2 = "select  *  from title where fname=" . $name;
+                        $sql2 = "select  *  from title where fname=" . "'" . $name . "'";
                         $rs2 = mysqli_query($conn, $sql2);
                         $rows = array();
 
